@@ -4,7 +4,7 @@
   <groupId>org.xusheng</groupId>
   <artifactId>kafka-shade-0.8.2.2</artifactId>
   <name>kafka-shade-0.8.2.2</name>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <url>http://maven.apache.org</url>
   <build>
     <plugins>
@@ -34,6 +34,13 @@
                   <shadedPattern>org.apache.kafka0_8_2_2</shadedPattern>
                 </relocation>
               </relocations>
+              <transformers>
+                <transformer>
+                  <manifestEntries>
+                    <Version>${kafka-version}</Version>
+                  </manifestEntries>
+                </transformer>
+              </transformers>
             </configuration>
           </execution>
         </executions>
